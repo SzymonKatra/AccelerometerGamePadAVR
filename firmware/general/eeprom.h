@@ -1,10 +1,3 @@
-/*
- * eeprom.h
- *
- *  Created on: 20-03-2014
- *      Author: Szymon
- */
-
 #ifndef EEPROM_H_INCLUDED
 #define EEPROM_H_INCLUDED
 

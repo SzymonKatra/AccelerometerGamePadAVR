@@ -1,10 +1,3 @@
-/*
- * reports.c
- *
- *  Created on: 18-12-2014
- *      Author: Szymon
- */
-
 #include "reports.h"
 
 static void reportsFillProperAxis(report_t* report, uint8_t axis);

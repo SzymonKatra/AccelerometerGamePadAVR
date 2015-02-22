@@ -1,10 +1,3 @@
-/*
- * profiles.h
- *
- *  Created on: 14-11-2014
- *      Author: Szymon
- */
-
 #ifndef PROFILES_H_
 #define PROFILES_H_
 

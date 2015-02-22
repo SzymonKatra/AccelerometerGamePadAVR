@@ -1,10 +1,3 @@
-/*
- * mcp23017.c
- *
- *  Created on: 21-11-2014
- *      Author: Szymon
- */
-
 #include "mcp23017.h"
 
 void mcp23017Init(void)

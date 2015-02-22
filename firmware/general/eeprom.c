@@ -1,10 +1,3 @@
-/*
- * eeprom.c
- *
- *  Created on: 20-03-2014
- *      Author: Szymon
- */
-
 #include "eeprom.h"
 
 void eepromWriteUint8(uint16_t address, uint8_t value)

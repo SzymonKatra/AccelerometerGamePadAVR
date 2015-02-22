@@ -1,10 +1,3 @@
-/*
- * profiles.c
- *
- *  Created on: 14-11-2014
- *      Author: Szymon
- */
-
 #include "profiles.h"
 
 static profile_t s_currentProfile;

@@ -1,10 +1,3 @@
-/*
- * reports.h
- *
- *  Created on: 14-11-2014
- *      Author: Szymon
- */
-
 #ifndef REPORTS_H_
 #define REPORTS_H_
 

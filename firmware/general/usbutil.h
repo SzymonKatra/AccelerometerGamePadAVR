@@ -1,10 +1,3 @@
-/*
- * usbutils.h
- *
- *  Created on: 14-11-2014
- *      Author: Szymon
- */
-
 #ifndef USBUTILS_H_
 #define USBUTILS_H_
 

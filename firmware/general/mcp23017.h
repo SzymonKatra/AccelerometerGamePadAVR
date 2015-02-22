@@ -1,10 +1,3 @@
-/*
- * mcp23017.h
- *
- *  Created on: 21-11-2014
- *      Author: Szymon
- */
-
 #ifndef MCP23017_H_
 #define MCP23017_H_
 

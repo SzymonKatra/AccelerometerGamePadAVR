@@ -1,4 +1,3 @@
-
 #include "input.h"
 
 static gamepadCallibration_t s_callibration;

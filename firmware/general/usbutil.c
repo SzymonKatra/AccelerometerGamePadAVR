@@ -1,11 +1,3 @@
-/*
- * usbutils.c
- *
- *  Created on: 14-11-2014
- *      Author: Szymon
- */
-
-
 #include "usbutil.h"
 
 static void* s_dataPtr = 0;

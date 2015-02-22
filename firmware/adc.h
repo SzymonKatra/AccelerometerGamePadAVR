@@ -1,10 +1,3 @@
-/*
- * adcutil.h
- *
- *  Created on: 08-11-2014
- *      Author: Szymon
- */
-
 #ifndef ADCUTIL_H_
 #define ADCUTIL_H_
 

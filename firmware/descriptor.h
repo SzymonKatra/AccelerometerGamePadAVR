@@ -1,10 +1,3 @@
-/*
- * descriptor.h
- *
- *  Created on: 17-12-2014
- *      Author: Szymon
- */
-
 #ifndef DESCRIPTOR_H_
 #define DESCRIPTOR_H_
 
