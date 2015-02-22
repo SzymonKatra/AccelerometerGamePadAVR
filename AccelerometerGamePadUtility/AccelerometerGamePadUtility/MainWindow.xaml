@@ -1,0 +1,110 @@
+﻿<Window x:Class="AccelerometerGamePadUtility.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AccelerometerGamePadUtility"
+        Title="{DynamicResource LangAppName}" Height="800" Width="750"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="450"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Style="{StaticResource StyleFrameworkElementStackPanel}" Content="{DynamicResource LangCheckConnection}" Command="{Binding CheckConnectionCommand}"/>
+            <TextBlock Style="{StaticResource StyleFrameworkElementStackPanel}" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding IsConnected, Converter={StaticResource ConverterIsConnectedToString}}" Foreground="{Binding IsConnected, Converter={StaticResource ConverterIsConnectedToBrush}}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Visibility="{Binding IsConnected, Converter={StaticResource ConverterBooleanToVisibility}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Column="0" Margin="10,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Text="{DynamicResource LangSelectedProfile}" FontSize="18" FontWeight="SemiBold"/>
+            <ComboBox Grid.Column="1" Margin="10,5,10,5" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="100" ItemsSource="{Binding Profiles}" DisplayMemberPath="Displayed" SelectedValue="{Binding SelectedProfile,Mode=TwoWay}"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Width="600" Height="373" Visibility="{Binding IsConnected, Converter={StaticResource ConverterBooleanToVisibility}}">
+            <Image Source="{StaticResource ImageGamepad}"/>
+            <Canvas>
+                <Button Style="{StaticResource StyleButtonSelection}" Canvas.Left="262" Canvas.Top="92" Width="76" Height="23" Background="{Binding SelectedAxis, Converter={StaticResource ConverterIsSelectedAxisToBrush}, ConverterParameter={x:Static local:AxisType.AccelerometerHorizontal}}" Command="{Binding SelectAxisCommand}" CommandParameter="{x:Static local:AxisType.AccelerometerHorizontal}"/>
+                <Button Style="{StaticResource StyleButtonSelection}" Canvas.Left="287" Canvas.Top="64" Width="23" Height="76" Background="{Binding SelectedAxis, Converter={StaticResource ConverterIsSelectedAxisToBrush}, ConverterParameter={x:Static local:AxisType.AccelerometerVertical}}" Command="{Binding SelectAxisCommand}" CommandParameter="{x:Static local:AxisType.AccelerometerVertical}"/>
+
+                <Button Style="{StaticResource StyleButtonSelection}" Canvas.Left="175" Canvas.Top="217" Width="76" Height="23" Background="{Binding SelectedAxis, Converter={StaticResource ConverterIsSelectedAxisToBrush}, ConverterParameter={x:Static local:AxisType.LeftAnalogHorizontal}}" Command="{Binding SelectAxisCommand}" CommandParameter="{x:Static local:AxisType.LeftAnalogHorizontal}"/>
+                <Button Style="{StaticResource StyleButtonSelection}" Canvas.Left="201" Canvas.Top="190" Width="23" Height="76" Background="{Binding SelectedAxis, Converter={StaticResource ConverterIsSelectedAxisToBrush}, ConverterParameter={x:Static local:AxisType.LeftAnalogVertical}}" Command="{Binding SelectAxisCommand}" CommandParameter="{x:Static local:AxisType.LeftAnalogVertical}"/>
+
+                <Button Style="{StaticResource StyleButtonSelection}" Canvas.Left="348" Canvas.Top="217" Width="76" Height="23" Background="{Binding SelectedAxis, Converter={StaticResource ConverterIsSelectedAxisToBrush}, ConverterParameter={x:Static local:AxisType.RightAnalogHorizontal}}" Command="{Binding SelectAxisCommand}" CommandParameter="{x:Static local:AxisType.RightAnalogHorizontal}"/>
+                <Button Style="{StaticResource StyleButtonSelection}" Canvas.Left="374" Canvas.Top="190" Width="23" Height="76" Background="{Binding SelectedAxis, Converter={StaticResource ConverterIsSelectedAxisToBrush}, ConverterParameter={x:Static local:AxisType.RightAnalogVertical}}" Command="{Binding SelectAxisCommand}" CommandParameter="{x:Static local:AxisType.RightAnalogVertical}"/>
+            </Canvas>
+        </Grid>
+        
+        <Grid Grid.Row="3" Visibility="{Binding SelectedAxis, Converter={StaticResource ConverterIsNullToVisibility}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SelectedAxis.Name}" FontWeight="Bold" FontSize="16"/>
+            
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{DynamicResource LangZeroDeadZone}"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{DynamicResource LangOneDeadZone}"/>
+            
+            <local:SliderWithButtons Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Minimum="0" Maximum="100" Value="{Binding SelectedAxis.ZeroDeadZone, Mode=TwoWay}"/>
+            <local:SliderWithButtons Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Minimum="0" Maximum="100" Value="{Binding SelectedAxis.OneDeadZone, Mode=TwoWay}"/>
+            
+            <TextBlock Grid.Column="2" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SelectedAxis.ZeroDeadZone, Converter={StaticResource ConverterIntegerPercent}}"/>
+            <TextBlock Grid.Column="2" Grid.Row="2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SelectedAxis.OneDeadZone, Converter={StaticResource ConverterIntegerPercent}}"/>
+
+            <ComboBox Grid.Column="3" Grid.Row="1" Margin="5,5,5,5" ItemsSource="{x:Static local:Global.Interpretations}" DisplayMemberPath="Name" SelectedValue="{Binding SelectedAxis.Interpretation,Mode=TwoWay}"/>      
+            
+            <CheckBox Grid.Column="5" Grid.Row="1" Margin="5,0,0,0" VerticalAlignment="Center" Content="{DynamicResource LangTruncateDeadZones}" IsChecked="{Binding SelectedAxis.Truncate,Mode=TwoWay}"/>
+            <CheckBox Grid.Column="5" Grid.Row="2" Margin="5,0,0,0" VerticalAlignment="Center" Content="{DynamicResource LangInvertAxis}" IsChecked="{Binding SelectedAxis.Invert,Mode=TwoWay}"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="4" Visibility="{Binding IsConnected, Converter={StaticResource ConverterBooleanToVisibility}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45*"/>
+                    <ColumnDefinition Width="35*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Margin="100,5,10,5" Content="{DynamicResource LangSaveSettings}" Command="{Binding SaveSettingsCommand}"/>
+                <Button Grid.Column="1" Margin="10,5,50,5" Content="{DynamicResource LangCancelSettings}" Command="{Binding ReloadSettingsCommand}"/>
+                <Button Grid.Column="2" Margin="10,5,10,5" Content="{DynamicResource LangDefaultSettings}" Command="{Binding DefaultSettingsCommand}"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Margin="200,5,200,5" Content="{DynamicResource LangCallibrateAxis}" Command="{Binding CallibrateAxisCommand}"/>
+            </Grid>
+        </Grid>
+        
+        <TextBlock Grid.Row="6" Margin="10,0,0,0" VerticalAlignment="Center" FontWeight="SemiBold" Text="{DynamicResource LangAuthorInfo}"/>
+    </Grid>
+</Window>

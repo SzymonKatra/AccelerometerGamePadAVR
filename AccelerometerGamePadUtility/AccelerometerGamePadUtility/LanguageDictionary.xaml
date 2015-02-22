@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="LangAppName">AccelerometerGamePadUtility</s:String>
+    <s:String x:Key="LangAuthorInfo">Autor: Szymon Katra</s:String>
+    <s:String x:Key="LangApply">Zatwierdź</s:String>
+    <s:String x:Key="LangCancel">Anuluj</s:String>
+    <s:String x:Key="LangNext">Dalej</s:String>
+    <s:String x:Key="LangCheckConnection">Sprawdź połączenie</s:String>
+    <s:String x:Key="LangConnected">Podłączony</s:String>
+    <s:String x:Key="LangNotConnected">Niepodłączony</s:String>
+    <s:String xml:space="preserve" x:Key="LangErrorOccurredWhileCommunication">Wystąpił bład podczas komunikacji z urządzeniem.
+Sprawdź czy jest prawidłowo podłączone i naciśnij przycisk "Sprawdź połączenie".</s:String>
+    
+    <s:String x:Key="LangAccelerometerHorizontal">Akcelerometr - oś pozioma</s:String>
+    <s:String x:Key="LangAccelerometerVertical">Akcelerometr - oś pionowa</s:String>
+    <s:String x:Key="LangLeftAnalogHorizontal">Lewa gałka - oś pozioma</s:String>
+    <s:String x:Key="LangLeftAnalogVertical">Lewa gałka - oś pionowa</s:String>
+    <s:String x:Key="LangRightAnalogHorizontal">Prawa gałka - oś pozioma</s:String>
+    <s:String x:Key="LangRightAnalogVertical">Prawa gałka - oś pionowa</s:String>
+    <s:String x:Key="LangZeroDeadZone">Martwa strefa - zero</s:String>
+    <s:String x:Key="LangOneDeadZone">Martwa strefa - jeden</s:String>
+    <s:String x:Key="LangSaveSettings">Zapisz ustawienia</s:String>
+    <s:String x:Key="LangCancelSettings">Anuluj</s:String>
+    <s:String x:Key="LangCallibrateAxis">Kalibruj oś</s:String>
+    <s:String x:Key="LangAxisNotSelected">Nie wybrano osi</s:String>
+    <s:String x:Key="LangTruncateDeadZones">Utnij martwe strefy</s:String>
+    <s:String x:Key="LangInvertAxis">Odwróć oś</s:String>
+    <s:String x:Key="LangCurrentValueFormat">Obecna wartość: {0}</s:String>
+    <s:String x:Key="LangZeroValueFormat">Pozycja zero: {0}</s:String>
+    <s:String x:Key="LangMinusVariationFormat">Wychylenie ujemne: {0}</s:String>
+    <s:String x:Key="LangPlusVariationFormat">Wychylenie dodatnie: {0}</s:String>
+    <s:String x:Key="LangCallibrationReady">Naciśnij przycisk "Dalej"</s:String>
+    <s:String x:Key="LangCallibrationPlaceInZero">Ustaw oś w pozycji środkowej</s:String>
+    <s:String x:Key="LangCallibrationAveragingResult">Uśrednianie wyniku...</s:String>
+    <s:String x:Key="LangCallibrationTilt">Odchyl oś w obie strony</s:String>
+    <s:String x:Key="LangCallibrationDone">Gotowe!</s:String>
+    <s:String x:Key="LangTitleCallibration">Kalibracja osi</s:String>
+    <s:String x:Key="LangNullAxis">Żadna oś</s:String>
+    <s:String x:Key="LangXAxis">Oś X</s:String>
+    <s:String x:Key="LangXRotationAxis">Obrót X</s:String>
+    <s:String x:Key="LangYAxis">Oś Y</s:String>
+    <s:String x:Key="LangYRotationAxis">Obrót Y</s:String>
+    <s:String x:Key="LangZAxis">Oś Z</s:String>
+    <s:String x:Key="LangZRotationAxis">Obrót Z</s:String>
+    <s:String x:Key="LangDefaultSettings">Ustawienia domyślnie</s:String>
+    <s:String xml:space="preserve" x:Key="LangPromptDefaultSettings">Czy na pewno chcesz przywrócić ustawienia domyślne dla tego profilu?
+Pamiętaj o zapisaniu ich przyciskiem "Zapisz ustawienia".</s:String>
+    <s:String xml:space="preserve" x:Key="LangProfileNotSaved">Zmiany w tym profilu nie zostały zapisane.
+Czy chcesz kontynuować?</s:String>
+    <s:String x:Key="LangSelectedProfile">Wybrany profil</s:String>
+</ResourceDictionary>

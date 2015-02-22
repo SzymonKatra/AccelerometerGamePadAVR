@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="AccelerometerGamePadUtility.SliderWithButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Margin="5,5,5,5" Content="-" Click="ButtonMinus_Click"/>
+        <Slider x:Name="Slider" Grid.Column="1" VerticalAlignment="Center" Minimum="{Binding Minimum}" Maximum="{Binding Maximum}" Value="{Binding Value, Mode=TwoWay}"/>
+        <Button Grid.Column="2" Margin="5,5,5,5" Content="+" Click="ButtonPlus_Click"/>
+    </Grid>
+</UserControl>

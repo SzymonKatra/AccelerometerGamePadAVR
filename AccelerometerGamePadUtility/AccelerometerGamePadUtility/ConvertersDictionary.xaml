@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:AccelerometerGamePadUtility.Converters">
+    <converters:IsConnectedToStringConverter x:Key="ConverterIsConnectedToString"/>
+    <converters:IsConnectedToBrushConverter x:Key="ConverterIsConnectedToBrush"/>
+    <converters:BooleanNegateConverter x:Key="ConverterBooleanNegate"/>
+    <BooleanToVisibilityConverter x:Key="ConverterBooleanToVisibility"/>
+    <converters:IntegerPercentConverter x:Key="ConverterIntegerPercent"/>
+    <converters:IsNullToVisibilityConverter x:Key="ConverterIsNullToVisibility"/>
+    <converters:IsSelectedAxisToBrushConverter x:Key="ConverterIsSelectedAxisToBrush"/>
+    <converters:CallibrationCurrentStepToNameConverter x:Key="ConverterCallibrationCurrentStepToName"/>
+    <converters:InterpretationViewModelConverter x:Key="ConverterInterpretationViewModel"/>
+</ResourceDictionary>
